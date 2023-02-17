@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifumi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/shifumi.jpg">
+</head>
+<body>
+    <div class="contain_title">
+        <span class="title">
+            Shifumi
+            <img src="images/pierre.png" alt="pierre_img">
+            <img src="images/papier.png" alt="papier_img">
+            <img src="images/ciseau.png" alt="ciseau_img">
+        </span>  
+    </div>
+
+    <div class="contain_quizz">
+        <h3>PIERRE - PAPIER - CISEAU</h3>
+        <p>Lequel choisissez-vous ?</p>
+
+        <div class="contain_images">
+            <div class="contain_image">
+                <img src="images/pierre.png" id="pierre" onclick="showHumanChoice(this.src, this.id)" alt="pierre_img"><br>
+                <span>PIERRE</span>
+            </div>
+            <div class="contain_image">
+                <img src="images/papier.png" id="papier" onclick="showHumanChoice(this.src, this.id)" alt="papier_img"><br>
+                <span>PAPIER</span>
+            </div>
+            <div class="contain_image">
+                <img src="images/ciseau.png" id="ciseau" onclick="showHumanChoice(this.src, this.id)" alt="ciseau_img"><br>
+                <span>CISEAU</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="contain_IA_and_human_parts">
+
+        <div class="contain_Human_choice">
+            <button class="titleChoice">VOTRE CHOIX</button>
+            <img src="" value="" class="humanImgChoice" alt="">
+
+            <button id="humanScore" class="score">0</button>
+        </div>
+
+        <div class="contain_IA_choice">
+            <button class="titleChoice">CHOIX DE L'IA</button>
+
+            <img src="images/loading.gif" alt="loading_gif" class="loading_img">
+
+            <img src="" alt="" class="IA_choice">
+
+            <button id="IA_Score" class="score">0</button>
+        </div>
+
+    </div>
+
+    <div id="notification" class="">
+        Compte crée avec succès !
+    </div>
+
+    <!-- basic modal -->
+    <div class="modal hide" id="myModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width:85%">
+                <div class="modal-body">
+                    <h3 class="msgWinner mb-3" style="font-style: italic;"></h3>
+                    <center><img src="" width="150" alt="imgWinner" class="imgWinner"></center>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="history.go(0)" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Rejouer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="JQuery-Compressed.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

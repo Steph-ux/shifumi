@@ -10,10 +10,10 @@ let notification = document.getElementById('notification')
 
 let winNumber = 1
 
-do{
+/* do{
     winNumber = prompt('Le premier arriver à combien gagne ? (entre 1 et 10)')
     
-}while (winNumber == "" || winNumber == null || winNumber > 10 || winNumber < 1 || isNaN(parseInt(winNumber)));
+}while (winNumber == "" || winNumber == null || winNumber > 10 || winNumber < 1 || isNaN(parseInt(winNumber))); */
 
 function showHumanChoice(src, value){
     

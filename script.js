@@ -72,13 +72,13 @@ function processGame() {
                     showMessage(status)
                     checkWinner()
                 }
-                else if(random_path == "/images/papier.png"){
+                else if(random_path == "images/papier.png"){
                     console.log('NUL')
                     status = 0
                     showMessage(status)                
                 }else{
                     humanScore_dom.innerHTML = parseInt(humanScore_dom.innerHTML) + 1
-                    console.log('Gagné')
+                    console.log('Gagnéra')
                     status = 1
                     showMessage(status)
                     checkWinner()

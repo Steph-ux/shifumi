@@ -173,4 +173,16 @@
     .contain_Human_choice, .contain_IA_choice{
         width: 60%;
     }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .contain_image span{
+        font-size: 15px;
+    }
+
+    .contain_quizz h3{
+        font-size: 20px;
+    }
 }

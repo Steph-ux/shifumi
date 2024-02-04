@@ -11,7 +11,7 @@ let notification = document.getElementById('notification')
 let winNumber = 1
 
 do{
-    winNumber = prompt('Le premier arriver à combien gagne ? (entre 1 et 10)')
+    winNumber = prompt("C'est parti ! Quel nombre faut-il atteindre pour remporter la partie ? (Entre 1 et 10)")
     
 }while (winNumber == "" || winNumber == null || winNumber > 10 || winNumber < 1 || isNaN(parseInt(winNumber)));
 

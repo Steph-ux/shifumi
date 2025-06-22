@@ -4,76 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shifumi</title>
+    <title>Shifumi Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="images/shifumi.jpg">
 </head>
 <body>
     <div class="contain_title">
-        <span class="title">
-            Shifumi
-            <img src="images/pierre.png" alt="pierre_img">
-            <img src="images/papier.png" alt="papier_img">
-            <img src="images/ciseau.png" alt="ciseau_img">
-        </span>  
-    </div>
-
-    <div class="contain_quizz">
-        <h3>PIERRE - PAPIER - CISEAU</h3>
-        <p>Lequel choisissez-vous ?</p>
-
-        <div class="contain_images">
-            <div class="contain_image">
-                <img src="images/pierre.png" id="pierre" onclick="showHumanChoice(this.src, this.id)" alt="pierre_img"><br>
-                <span>PIERRE</span>
-            </div>
-            <div class="contain_image">
-                <img src="images/papier.png" id="papier" onclick="showHumanChoice(this.src, this.id)" alt="papier_img"><br>
-                <span>PAPIER</span>
-            </div>
-            <div class="contain_image">
-                <img src="images/ciseau.png" id="ciseau" onclick="showHumanChoice(this.src, this.id)" alt="ciseau_img"><br>
-                <span>CISEAU</span>
-            </div>
+        <div class="title-wrapper">
+            <span class="title">
+                🎯 Shifumi
+                <span class="title-emojis">🪨📄✂️</span>
+            </span>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/Cyrus2401/shifumi" target="_blank" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yao-cyrus-junior-hessou-b6a58122b/" target="_blank" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
         </div>
     </div>
 
-    <div class="contain_IA_and_human_parts">
+    <div class="main-content">
+        <div class="contain_quizz">
+            <h3>PIERRE - PAPIER - CISEAU</h3>
+            <p>Testez votre chance contre la machine</p>
 
-        <div class="contain_Human_choice">
-            <button class="titleChoice">VOTRE CHOIX</button>
-            <img src="" value="" class="humanImgChoice" alt="">
-
-            <button id="humanScore" class="score">0</button>
+            <div class="contain_images">
+                <div class="contain_image">
+                    <div id="pierre" onclick="showHumanChoice(this.src, this.id)">🪨</div>
+                    <span>PIERRE</span>
+                </div>
+                <div class="contain_image">
+                    <div id="papier" onclick="showHumanChoice(this.src, this.id)">📄</div>
+                    <span>PAPIER</span>
+                </div>
+                <div class="contain_image">
+                    <div id="ciseau" onclick="showHumanChoice(this.src, this.id)">✂️</div>
+                    <span>CISEAU</span>
+                </div>
+            </div>
         </div>
 
-        <div class="contain_IA_choice">
-            <button class="titleChoice">CHOIX DE L'IA</button>
+        <div class="contain_IA_and_human_parts">
+            <div class="contain_Human_choice">
+                <button class="titleChoice">VOTRE CHOIX</button>
+                <div class="humanImgChoice"></div>
+                <button id="humanScore" class="score">0</button>
+            </div>
 
-            <img src="images/loading.gif" alt="loading_gif" class="loading_img">
-
-            <img src="" alt="" class="IA_choice">
-
-            <button id="IA_Score" class="score">0</button>
+            <div class="contain_IA_choice">
+                <button class="titleChoice">CHOIX DE L'IA</button>
+                <img src="https://i.gifer.com/ZKZg.gif" alt="loading_gif" class="loading_img">
+                <div class="IA_choice"></div>
+                <button id="IA_Score" class="score">0</button>
+            </div>
         </div>
-
     </div>
 
     <div id="notification" class="">
-        Compte crée avec succès !
+        Prêt à jouer !
     </div>
 
-    <!-- basic modal -->
+    <!-- Modal de fin de partie -->
     <div class="modal hide" id="myModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="width:85%">
+            <div class="modal-content">
                 <div class="modal-body">
-                    <h3 class="msgWinner mb-3" style="font-style: italic;"></h3>
-                    <center><img src="" width="150" alt="imgWinner" class="imgWinner"></center>
+                    <h3 class="msgWinner"></h3>
+                    <div class="final-score"></div>
                 </div>
                 <div class="modal-footer">
-                    <button onclick="history.go(0)" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Rejouer</button>
+                    <button onclick="resetGame()" class="btn">🎮 Rejouer</button>
                 </div>
             </div>
         </div>

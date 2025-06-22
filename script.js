@@ -88,7 +88,7 @@ function processGame() {
             IA_choice.textContent = '';
             notification.setAttribute('class', "")
         }
-    }, 1000)  
+    }, 3000)  
 }
 
 function determineWinner(humanChoice, iaEmoji) {
@@ -150,13 +150,13 @@ function checkWinner() {
         gameActive = false
         setTimeout(() => {
             showVictoryModal('human', humanScore, iaScore)
-        }, 1000)
+        }, 1500)
     }
     else if (iaScore === winNumber) {
         gameActive = false
         setTimeout(() => {
             showVictoryModal('ia', humanScore, iaScore)
-        }, 1000)
+        }, 1500)
     }
 }
 
